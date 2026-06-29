@@ -26,13 +26,17 @@ class SplashController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    debugPrint("SplashController: onReady firing logic...");
     _resolveInitialRoute();
   }
 
   Future<void> _resolveInitialRoute() async {
+    debugPrint("SplashController: Waiting 5 seconds...");
     // Small, deliberate delay so the splash branding is actually visible —
     // not a loading hack.
     await Future.delayed(const Duration(seconds: 5));
+    
+    debugPrint("SplashController: Checking auth status: ${_authService.isAuthenticated.value}");
 
     if (_authService.isAuthenticated.value) {
       // Bootstrap-time device-token registration: if the app already

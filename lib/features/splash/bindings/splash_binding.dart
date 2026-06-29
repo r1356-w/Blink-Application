@@ -23,8 +23,8 @@ class SplashBinding extends Bindings {
       fenix: true,
     );
 
-    Get.lazyPut<SplashController>(
-      () => SplashController(
+    Get.put<SplashController>(
+      SplashController(
         Get.find<AuthService>(),
         Get.find<FcmService>(),
         Get.find<NotificationsRepository>(),
