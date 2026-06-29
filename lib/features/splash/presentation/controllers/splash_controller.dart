@@ -32,7 +32,7 @@ class SplashController extends GetxController {
   Future<void> _resolveInitialRoute() async {
     // Small, deliberate delay so the splash branding is actually visible —
     // not a loading hack.
-    await Future.delayed(const Duration(milliseconds: 600));
+    await Future.delayed(const Duration(seconds: 5));
 
     if (_authService.isAuthenticated.value) {
       // Bootstrap-time device-token registration: if the app already
